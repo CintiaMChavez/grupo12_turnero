@@ -1,1 +1,0 @@
-# grupo12_turnero
