@@ -24,7 +24,7 @@ function App() {
     } else {
       localStorage.setItem("citas", JSON.stringify([]));
     }
-  }, [citasIniciales]);
+  }, [citas, citasIniciales]);
 
   //Funcion que tome citas actual y agregue nueva
   const crearCita = (cita) => {
