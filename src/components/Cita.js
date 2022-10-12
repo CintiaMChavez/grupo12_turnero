@@ -7,17 +7,16 @@ const Cita = ({ cita, eliminarCita }) => (
   
   <div className="cita">
     <p>
-      Paciente: <span>{cita.paciente}</span>
+      Code: <span>{cita.code}</span>
     </p>
-  
+    <p>
+      Box: <span>{cita.box}</span>
+    </p>
     <p>
       Hora: <span>{cita.hora}</span>
     </p>
     <p>
       Fecha: <span>{cita.fecha}</span>
-    </p>
-    <p>
-      Sintomas: <span>{cita.sintomas}</span>
     </p>
 
     <button

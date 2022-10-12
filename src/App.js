@@ -4,6 +4,7 @@ import Cita from "./components/Cita";
 import PropTypes from "prop-types";
 import Footer from "./components/Footer";
 
+
 function App() {
   
   //Citas en local storage
@@ -41,8 +42,7 @@ function App() {
 
   return (
     <>
-      <h1>ADMINISTRACION DE LOS PACIENTES</h1>
-
+      <h3></h3>
       <div className="container">
         <div className="row">
           <div className="one-half column">

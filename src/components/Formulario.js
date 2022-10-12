@@ -4,10 +4,10 @@ import { v4 as uuid } from "uuid";
 const Formulario = ({ crearCita }) => {
   //Crer state de citas
   const [cita, actualizarCita] = useState({
-    paciente: "",
+    code: "",
+    box: "",
     fecha: "",
     hora: "",
-    sintomas: "",
   });
 
   //Crear state error
@@ -22,7 +22,7 @@ const Formulario = ({ crearCita }) => {
   };
 
   //Extraccion de  valores
-  const { paciente , fecha, hora, sintomas } = cita;
+  const { code , box, fecha, hora, } = cita;
 
   //Cuando el usuario presiona agregar cita
   const submitCita = (e) => {
@@ -30,10 +30,10 @@ const Formulario = ({ crearCita }) => {
 
     //Validacion
     if (
-      paciente.trim() === "" ||
+      code.trim() === "" ||
+      box.trim() === "" ||
       fecha.trim() === "" ||
-      hora.trim() === "" ||
-      sintomas.trim() === ""
+      hora.trim() === ""
     ) {
       setError(true);
 
@@ -49,10 +49,10 @@ const Formulario = ({ crearCita }) => {
     //Reiniciar el form
 
     actualizarCita({
-      paciente: "",
+      code: "",
+      box:"",
       fecha: "",
       hora: "",
-      sintomas: "",
     });
   };
 
@@ -63,16 +63,25 @@ const Formulario = ({ crearCita }) => {
      
 
       <form onSubmit={submitCita}>
-        <label>Nombre del Paciente</label>
+        <label>Code</label>
         <input
           type="text"
-          name="paciente"
+          name="code"
           className="u-full-width"
-          placeholder="Nombre del paciente"
+          placeholder="codigo"
           onChange={handleChange}
-          value={paciente}
+          value={code}
         />
 
+        <label>Box</label>
+        <input
+          type="number"
+          name="box"
+          className="u-full-width"
+          placeholder="box"
+          onChange={handleChange}
+          value={box}
+        />
 
         <label>Fecha</label>
         <input
@@ -91,14 +100,6 @@ const Formulario = ({ crearCita }) => {
           onChange={handleChange}
           value={hora}
         />
-
-        <label>Síntomas</label>
-        <textarea
-          className="u-full-width"
-          name="sintomas"
-          onChange={handleChange}
-          value={sintomas}
-        ></textarea>
 
  {error ? <p className="alerta-error">Todos los campos son obligatorios</p>
            
