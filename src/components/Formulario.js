@@ -59,8 +59,7 @@ const Formulario = ({ crearCita }) => {
   return (
     <>
       
-      <button type="submit" className="button-primary">
-        crear turno</button>
+      <h2>Crear turno</h2>
        
      
 
